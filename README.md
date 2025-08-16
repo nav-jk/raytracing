@@ -19,6 +19,10 @@ and they stop when they hit a circular obstacle.
 - Move your mouse inside the window → rays will follow.
 - The white circle in the center acts as an obstacle.
 - Rays fade out as they move further away.
+---
+
+## Screenshot
+![MRay Tracing](image.jpg)  
 
 ---
 
