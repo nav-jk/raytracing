@@ -19,7 +19,7 @@ typedef struct Ray {
     double angle;
 } Ray;
 
-// generate rays spreading out evenly in 360°
+
 void generate_rays(Circle circle, Ray rays[RAYS_NUMBER]) {
     for (int i = 0; i < RAYS_NUMBER; i++) {
         double angle = ((double)i / RAYS_NUMBER) * 2 * M_PI;
@@ -38,7 +38,7 @@ Uint32 rainbow_color(int index, int total, double fade) {
     return (0xFF << 24) | ((int)r << 16) | ((int)g << 8) | (int)b;
 }
 
-// rainbow rays from source, stop when hitting circle
+
 void FillRays(SDL_Surface* surface, Ray rays[RAYS_NUMBER], Circle circle) {
     for (int i = 0; i < RAYS_NUMBER; i++) {
         Ray ray = rays[i];
@@ -102,8 +102,8 @@ int main() {
     SDL_Surface* psurface = SDL_GetWindowSurface(pwindow);
     Circle circle = { 450, 300, 80 };
 
-    SDL_Color inner = {50, 0, 100};   // dark purple center
-    SDL_Color outer = {200, 150, 255}; // light lavender edge
+    SDL_Color inner = {50, 0, 100};  
+    SDL_Color outer = {200, 150, 255}; 
 
     int running = 1;
     while (running) {
@@ -114,10 +114,10 @@ int main() {
             if (event.type == SDL_MOUSEMOTION) {
                 SDL_FillRect(psurface, NULL, COLOR_BLACK);
 
-                // draw gradient object
+
                 GradientCircle(circle, psurface, inner, outer);
 
-                // moving rainbow ray source (green circle)
+
                 int mouseX = event.motion.x;
                 int mouseY = event.motion.y;
                 Circle source = { mouseX, mouseY, 30 };
